@@ -27,7 +27,7 @@ const Home = () => {
             variant="outlined"
             className="px-5 py-3 font-semibold text-slate-500 hover:bg-[#130F49] hover:text-violet-100"
           >
-            Let's talk
+            Let`s talk
           </Button>
         </Box>
       </Box>

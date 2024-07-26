@@ -7,13 +7,10 @@ const Home = () => {
     <Box component="section" className="grid grid-cols-2">
       <Box component="div">
         <Typography className="text-[60px] font-[950]">
-          Hi, I'm {""}
-          <Typography
-            color="secondary"
-            className="inline text-[60px] font-[950]"
-          >
+          Hi, I'm{" "}
+          <span className="inline text-[60px] font-[950] text-[#A5A6FF]">
             Hedaetul!
-          </Typography>
+          </span>
           Creative Web Developer in Bangladesh
         </Typography>
         <Typography className="text-[18px] font-extralight">

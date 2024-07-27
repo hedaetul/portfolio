@@ -49,7 +49,6 @@ const SideNav = () => {
         <Link underline="none">Home</Link>
         <Link>About</Link>
         <Link>Services</Link>
-        <Link>Portfolio</Link>
         <Link>Blog</Link>
         <Link>Contact</Link>
       </Box>

@@ -2,7 +2,10 @@ import { Box, Button, Typography } from "@mui/material";
 
 const About = () => {
   return (
-    <Box component="section" className="flex flex-col gap-16">
+    <Box
+      component="section"
+      className="flex flex-col gap-28  overflow-y-hidden py-4"
+    >
       <Box component="div" className="grid grid-cols-3 gap-16">
         <Box component="div" className="col-span-1">
           <Typography className="text-[18px] font-medium uppercase text-[#55527C]">
@@ -16,7 +19,7 @@ const About = () => {
           </Typography>
           <Button
             variant="contained"
-            className="mt-9 px-5 py-3 font-semibold text-violet-100 hover:bg-white hover:text-slate-500"
+            
           >
             Got a project?
           </Button>
@@ -39,18 +42,31 @@ const About = () => {
       <Box component="div" className="flex items-center justify-between gap-6">
         <Box
           component="div"
-          className="h-[211px] w-[383px] rounded-md border-none bg-[#D3F4EC]"
+          className="flex-col-center h-[211px] w-[383px] rounded-md border-none bg-[#D3F4EC]"
         >
           <Typography className="text-[40px] font-bold">10+</Typography>
+          <Typography className="text-[18px] font-medium uppercase text-[#55527C]">
+            Years of Experience
+          </Typography>
         </Box>
         <Box
           component="div"
-          className="h-[211px] w-[383px] rounded-md border-none bg-blue-700"
-        ></Box>
+          className="flex-col-center h-[211px] w-[383px] rounded-md border-none bg-[#FCE8D4]"
+        >
+          <Typography className="text-[40px] font-bold">50+</Typography>
+          <Typography className="text-[18px] font-medium uppercase text-[#55527C]">
+            Projects Completed
+          </Typography>
+        </Box>
         <Box
           component="div"
-          className="h-[211px] w-[383px] rounded-md border-none bg-blue-700"
-        ></Box>
+          className="flex-col-center h-[211px] w-[383px] rounded-md border-none bg-[#E3F9E0]"
+        >
+          <Typography className="text-[40px] font-bold">30+</Typography>
+          <Typography className="text-[18px] font-medium uppercase text-[#55527C]">
+            Happy Clients
+          </Typography>
+        </Box>
       </Box>
     </Box>
   );

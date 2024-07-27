@@ -17,18 +17,8 @@ const Home = () => {
           I`m a Bangladesh based web developer
         </Typography>
         <Box component="div" className="mt-9 flex gap-4">
-          <Button
-            variant="contained"
-            className="px-5 py-3 font-semibold text-violet-100 hover:bg-white hover:text-slate-500"
-          >
-            Got a project?
-          </Button>
-          <Button
-            variant="outlined"
-            className="px-5 py-3 font-semibold text-slate-500 hover:bg-[#130F49] hover:text-violet-100"
-          >
-            Let`s talk
-          </Button>
+          <Button variant="contained">Got a project?</Button>
+          <Button variant="outlined">Let`s talk</Button>
         </Box>
       </Box>
       <Box component="div">

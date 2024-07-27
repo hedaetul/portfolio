@@ -1,5 +1,7 @@
 import About from "@/components/About";
+import Blog from "@/components/Blog";
 import Home from "@/components/Home";
+import Services from "@/components/Services";
 import SideNav from "@/components/SideNav";
 import { Box } from "@mui/material";
 import Divider from "@mui/material/Divider";
@@ -25,9 +27,21 @@ const Page = () => {
       </Box>
       <Box
         component="section"
-        className="h-screen flex-grow overflow-y-auto px-9 pt-24 md:ml-[370px]"
+        className="h-screen flex-grow px-9 pt-24 md:ml-[370px]"
       >
         <About />
+      </Box>
+      <Box
+        component="section"
+        className="h-screen flex-grow px-9 pt-24 md:ml-[370px]"
+      >
+        <Services />
+      </Box>
+      <Box
+        component="section"
+        className="h-screen flex-grow px-9 pt-24 md:ml-[370px]"
+      >
+        <Blog />
       </Box>
     </Box>
   );

@@ -44,7 +44,7 @@ const Page = () => {
       >
         <Blog />
       </Box>
-      <Box component="section" className="h-fit bg-[#E9F9FF] flex-grow px-9 pt-24 md:ml-[370px]">
+      <Box component="section" className="h-fit bg-[#E9F9FF] flex-grow px-9 pt-24 pb-24 md:ml-[370px]">
         <Contact />
       </Box>
     </Box>

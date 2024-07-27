@@ -5,7 +5,7 @@ const Services = () => {
   return (
     <Box component="section" className="py-8">
       <Typography className="mb-4 text-[18px] font-medium uppercase text-[#55527C]">
-        -Services
+        - Services
       </Typography>
       <Typography className="mb-8 text-[40px] font-extrabold">
         Everything about me!

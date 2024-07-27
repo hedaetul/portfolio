@@ -6,17 +6,15 @@ import { FaArrowRight } from "react-icons/fa6";
 const Blog = () => {
   return (
     <Box component="section" className="grid grid-cols-3 gap-4 py-8">
-      {/* Part 1: My Blog and Get in Touch */}
       <Box component="div" className="col-span-1">
         <Typography className="mb-4 text-[18px] font-medium uppercase text-[#55527C]">
-          -Blog
+          - Blog
         </Typography>
         <Typography className="mb-8 text-[40px] font-extrabold">
           My Blog
         </Typography>
         <Button variant="contained">Got a project?</Button>
       </Box>
-      {/* Part 2: Date and Title */}
       <Box component="div" className="col-span-1">
         <Box className="mb-1 flex items-center">
           <CalendarTodayIcon fontSize="small" className="mr-2" />
@@ -35,7 +33,6 @@ const Blog = () => {
           </Link>
         </Typography>
       </Box>
-      {/* Part 3: Learn More Link */}
       <Box component="div" className="col-span-1 flex items-center justify-center">
         <Link
           href="https://hedaetul.hashnode.dev/how-to-fix-the-error-code-not-found-in-vercel"

@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import Blog from "@/components/Blog";
+import Contact from "@/components/Contact";
 import Home from "@/components/Home";
 import Services from "@/components/Services";
 import SideNav from "@/components/SideNav";
@@ -27,7 +28,7 @@ const Page = () => {
       </Box>
       <Box
         component="section"
-        className="h-screen flex-grow px-9 pt-24 md:ml-[370px]"
+        className="h-fit flex-grow px-9 pt-24 md:ml-[370px]"
       >
         <About />
       </Box>
@@ -39,9 +40,12 @@ const Page = () => {
       </Box>
       <Box
         component="section"
-        className="h-screen flex-grow px-9 pt-24 md:ml-[370px]"
+        className="h-fit flex-grow px-9 pt-24 md:ml-[370px]"
       >
         <Blog />
+      </Box>
+      <Box component="section" className="h-fit bg-[#E9F9FF] flex-grow px-9 pt-24 md:ml-[370px]">
+        <Contact />
       </Box>
     </Box>
   );

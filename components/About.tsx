@@ -4,7 +4,7 @@ const About = () => {
   return (
     <Box
       component="section"
-      className="flex flex-col gap-28  overflow-y-hidden py-4"
+      className="flex flex-col gap-28 overflow-y-hidden py-4"
     >
       <Box component="div" className="grid grid-cols-3 gap-16">
         <Box component="div" className="col-span-1">
@@ -17,12 +17,7 @@ const About = () => {
           <Typography className="text-[20px] font-semibold">
             Web Developer
           </Typography>
-          <Button
-            variant="contained"
-            
-          >
-            Got a project?
-          </Button>
+          <Button variant="contained">Got a project?</Button>
         </Box>
         <Box component="div" className="col-span-2">
           <Typography className="text-[18px] font-normal text-[#55527C]">

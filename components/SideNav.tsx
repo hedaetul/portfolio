@@ -1,6 +1,9 @@
+'use client'
+
 import Avatar from "@/dist/images/Avatar.png";
 import { Box, Link, Typography } from "@mui/material";
 import Image from "next/image";
+import { useState } from "react";
 import { FaFacebookF, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const social = [
@@ -21,14 +24,23 @@ const social = [
   },
 ];
 
+const sections = ["Home", "About", "Services", "Blog", "Contact"];
+
 const SideNav = () => {
+  const [activeSection, setActiveSection] = useState("Home");
+
+  const handleSetActive = (section: string) => {
+    setActiveSection(section);
+  };
+
   return (
     <Box
       component="section"
       className="flex-col-center h-screen bg-white pb-8 pt-14 text-center"
     >
       <Box component="div" className="flex-col-center">
-        <Box component='div'
+        <Box
+          component="div"
           sx={{
             width: "120px",
             height: "120px",
@@ -36,8 +48,7 @@ const SideNav = () => {
             borderRadius: "50%",
             overflow: "hidden",
           }}
-          className="w-[120px] h-[120px]"
-          
+          className="h-[120px] w-[120px]"
         >
           <Image src={Avatar} alt="Avatar" layout="fit" objectFit="cover" />
         </Box>
@@ -46,11 +57,19 @@ const SideNav = () => {
         </Typography>
       </Box>
       <Box component="div" className="flex-col-center gap-4 pt-12">
-        <Link underline="none">Home</Link>
-        <Link>About</Link>
-        <Link>Services</Link>
-        <Link>Blog</Link>
-        <Link>Contact</Link>
+        {sections.map((section) => (
+          <Link
+            key={section}
+            href={`#${section.toLowerCase()}`}
+            underline="none"
+            className={`cursor-pointer ${
+              activeSection === section ? "text-blue-500" : "text-gray-700"
+            } hover:text-blue-500`}
+            onClick={() => handleSetActive(section)}
+          >
+            {section}
+          </Link>
+        ))}
       </Box>
       <Box component="div" className="flex h-full flex-col justify-end">
         <Box component="div" className="flex-col-center gap-3 px-8">

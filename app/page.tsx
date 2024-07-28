@@ -23,28 +23,36 @@ const Page = () => {
       <Box
         component="section"
         className="h-screen flex-grow overflow-y-auto bg-[#EFFBF8] px-9 pt-24 md:ml-[370px]"
+        id="home"
       >
         <Home />
       </Box>
       <Box
         component="section"
         className="h-fit flex-grow px-9 pt-24 md:ml-[370px]"
+        id="about"
       >
         <About />
       </Box>
       <Box
         component="section"
         className="h-screen flex-grow px-9 pt-24 md:ml-[370px]"
+        id="services"
       >
         <Services />
       </Box>
       <Box
         component="section"
         className="h-fit flex-grow px-9 pt-24 md:ml-[370px]"
+        id="blog"
       >
         <Blog />
       </Box>
-      <Box component="section" className="h-fit bg-[#E9F9FF] flex-grow px-9 pt-24 pb-24 md:ml-[370px]">
+      <Box
+        component="section"
+        className="h-fit bg-[#E9F9FF] flex-grow px-9 pt-24 pb-24 md:ml-[370px]"
+        id="contact"
+      >
         <Contact />
       </Box>
     </Box>

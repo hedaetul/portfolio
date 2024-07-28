@@ -5,13 +5,13 @@ const Contact = () => {
     <Box component="section" className="grid grid-cols-2 gap-9 p-4">
       <Box component="div" className="mb-4">
         <Typography className="mb-4 text-[18px] font-medium uppercase text-[#55527C]">
-          - Let's Connect
+          - Let`s Connect
         </Typography>
         <Typography className="mb-8 text-[40px] font-extrabold">
           Get in touch
         </Typography>
         <Typography className="mb-8 text-lg font-extralight text-[#55527C]">
-          I'm currently avaliable to take on new projects, so feel free to send
+          I`m currently avaliable to take on new projects, so feel free to send
           me a message about anything that you want to run past me. You can
           contact anytime at 24/7
         </Typography>

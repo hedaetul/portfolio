@@ -29,7 +29,7 @@ const Blog = () => {
             rel="noopener noreferrer"
             className="no-underline hover:underline transition duration-300"
           >
-            How to fix the error "CODE NOT FOUND" in Vercel?
+            How to fix the error `CODE NOT FOUND` in Vercel?
           </Link>
         </Typography>
       </Box>

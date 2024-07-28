@@ -23,7 +23,7 @@ const About = () => {
           <Typography className="text-[18px] font-normal text-[#55527C]">
             Hello there! My name is{" "}
             <span className="text-[#ff972d]">Hedaetul Islam</span>. I am a web
-            designer & developer, and I'm very passionate and dedicated to my
+            designer & developer, and I`m very passionate and dedicated to my
             work.
           </Typography>
           <Typography className="mt-6 text-[18px] font-normal text-[#55527C]">

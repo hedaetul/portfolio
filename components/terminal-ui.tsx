@@ -63,7 +63,7 @@ export function InfoTable({ rows }: { rows: InfoRow[] }) {
             ) : (
               <>
                 {row.value}
-                {row.comment ? <span className="text-muted-foreground"> // {row.comment}</span> : null}
+                {/* {row.comment ? <span className="text-muted-foreground"> //{row.comment}</span> : null} */}
               </>
             )}
           </div>

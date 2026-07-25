@@ -1,5 +1,6 @@
 import { ArrowUpRight, Github, Mail, MapPin, Phone } from "lucide-react";
 
+import { ContactForm } from "@/components/contact-form";
 import { portfolio } from "@/lib/portfolio";
 
 function SectionTitle({
@@ -172,16 +173,11 @@ export function ContactSection({ showHeading = false }: { showHeading?: boolean 
         </div>
 
         <div className="rounded-lg border border-white/10 bg-white/[0.02] p-6">
-          <p className="font-mono text-sm text-muted-foreground">Quick message</p>
-          <p className="mt-4 font-mono text-sm leading-7 text-zinc-300">
-            Prefer async collaboration? Email works best for me. I typically reply within 24 hours for freelance and role inquiries.
+          <p className="font-mono text-sm text-muted-foreground">Send a message</p>
+          <p className="mt-2 font-mono text-xs leading-6 text-muted-foreground">
+            {"// typically reply within 24 hours"}
           </p>
-          <a
-            href={`mailto:${portfolio.email}?subject=Portfolio%20inquiry`}
-            className="mt-8 inline-flex items-center gap-2 rounded-md bg-terminal px-4 py-2.5 font-mono text-sm font-medium text-black transition hover:bg-terminal/90"
-          >
-            → compose email
-          </a>
+          <ContactForm className="mt-6" />
         </div>
       </div>
     </section>

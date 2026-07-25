@@ -1,6 +1,12 @@
-// app/api/contact/route.ts
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+
+import {
+  buildContactEmailHtml,
+  buildContactEmailSubject,
+  buildContactEmailText,
+} from "@/lib/emails/contact-message";
+import { portfolio } from "@/lib/portfolio";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -18,17 +24,23 @@ export async function POST(request: Request) {
   }
 
   const to = process.env.CONTACT_TO_EMAIL;
-  const from = process.env.CONTACT_FROM_EMAIL ?? "onboarding@resend.dev";
+  const fromEmail = process.env.CONTACT_FROM_EMAIL ?? "onboarding@resend.dev";
+  const fromName = process.env.CONTACT_FROM_NAME ?? `${portfolio.firstName} Portfolio`;
+  const from = `${fromName} <${fromEmail}>`;
+
   if (!process.env.RESEND_API_KEY || !to) {
     return NextResponse.json({ error: "Server not configured" }, { status: 500 });
   }
+
+  const emailContent = { name, email, message };
 
   const { error } = await resend.emails.send({
     from,
     to,
     replyTo: email,
-    subject: `Portfolio message from ${name}`,
-    text: `From: ${name} <${email}>\n\n${message}`,
+    subject: buildContactEmailSubject(name),
+    text: buildContactEmailText(emailContent),
+    html: buildContactEmailHtml(emailContent),
   });
 
   if (error) {

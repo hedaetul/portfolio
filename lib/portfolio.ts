@@ -71,7 +71,7 @@ export const portfolio = {
       company: "Wide Star Tech",
       location: "Bangladesh",
       title: "Jr. Frontend Developer (Internship)",
-      period: "Feb 2024 – Jul 2024",
+      period: "Feb 2024 – Dec 2024",
       points: [
         "Built responsive web interfaces using HTML, CSS, JavaScript, and React under senior developer guidance.",
         "Collaborated within an agile team to implement UI components from design specs to functional code.",

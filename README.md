@@ -1,7 +1,5 @@
 # Hedaetul Islam — Terminal Portfolio
 
-//checking
-
 A hacker-chic developer portfolio inspired by terminal-style personal sites. All resume-derived content lives in `lib/portfolio.ts`.
 
 ## Stack

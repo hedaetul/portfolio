@@ -83,6 +83,12 @@ export function HeroSection() {
             >
               $ whoami
             </Link>
+            <Link
+              href={portfolio.resume.viewPath}
+              className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-white/15 px-4 py-2.5 font-mono text-sm text-foreground transition hover:border-terminal/40 hover:text-terminal sm:w-auto"
+            >
+              $ cat resume.pdf
+            </Link>
           </div>
 
           <SocialLinks className="mt-6 sm:mt-8" />

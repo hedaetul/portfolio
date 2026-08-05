@@ -1,10 +1,63 @@
 "use client";
 
-import { FormEvent, useRef, useState } from "react";
+import { FormEvent, Fragment, useRef, useState } from "react";
 
 import { portfolio, terminalSuggestions } from "@/lib/portfolio";
 import { getTerminalResponse, initialTerminalMessages, type TerminalMessage } from "@/lib/terminal-responses";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
+
+const terminalLinks = [portfolio.resume.viewPath, portfolio.resume.path];
+
+const linkPattern = new RegExp(
+  `(https?:\\/\\/[^\\s]+|${terminalLinks.map((link) => link.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`,
+  "g",
+);
+
+function isTerminalLink(part: string) {
+  return (
+    /^https?:\/\/\S+$/.test(part) ||
+    part === portfolio.resume.path ||
+    part === portfolio.resume.viewPath
+  );
+}
+
+function TerminalMessageContent({ content }: { content: string }) {
+  const parts = content.split(linkPattern);
+
+  return (
+    <>
+      {parts.map((part, index) =>
+        isTerminalLink(part) ? (
+          part.endsWith('.pdf') || part.startsWith('http') ? (
+            <a
+              key={`${part}-${index}`}
+              href={part}
+              target="_blank"
+              rel="noreferrer"
+              download={
+                part.endsWith('.pdf') ? portfolio.resume.downloadName : undefined
+              }
+              className="underline decoration-terminal/40 underline-offset-4 transition hover:text-terminal"
+            >
+              {part}
+            </a>
+          ) : (
+            <Link
+              key={`${part}-${index}`}
+              href={part}
+              className="underline decoration-terminal/40 underline-offset-4 transition hover:text-terminal"
+            >
+              {part}
+            </Link>
+          )
+        ) : (
+          <Fragment key={`${part}-${index}`}>{part}</Fragment>
+        ),
+      )}
+    </>
+  );
+}
 
 export function TerminalChat() {
   const [messages, setMessages] = useState<TerminalMessage[]>(initialTerminalMessages);
@@ -53,7 +106,11 @@ export function TerminalChat() {
               message.role === "assistant" && "text-terminal-dim",
             )}
           >
-            {message.role === "user" ? `> ${message.content}` : message.content}
+            {message.role === "user" ? (
+              `> ${message.content}`
+            ) : (
+              <TerminalMessageContent content={message.content} />
+            )}
           </div>
         ))}
         {isTyping ? <p className="font-mono text-sm text-muted-foreground">{"// thinking..."}</p> : null}

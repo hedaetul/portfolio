@@ -1,5 +1,6 @@
 import {
   ArrowUpRight,
+  FileDown,
   Github,
   GithubIcon,
   Mail,
@@ -269,6 +270,21 @@ export function ContactSection({
               className='flex items-center gap-3 text-muted-foreground transition hover:text-terminal'
             >
               <Github className='size-4' /> github.com/hedaetul
+            </a>
+            <Link
+              href={portfolio.resume.viewPath}
+              className='flex items-center gap-3 text-muted-foreground transition hover:text-terminal'
+            >
+              <FileDown className='size-4' /> view resume online
+            </Link>
+            <a
+              href={portfolio.resume.path}
+              download={portfolio.resume.downloadName}
+              target='_blank'
+              rel='noreferrer'
+              className='flex items-center gap-3 text-muted-foreground transition hover:text-terminal'
+            >
+              <FileDown className='size-4' /> download resume.pdf
             </a>
             <span className='flex items-center gap-3 text-muted-foreground'>
               <MapPin className='size-4' /> {portfolio.location}

@@ -31,8 +31,27 @@ const experienceAnswer = portfolio.experience
   .map((role) => `• ${role.title} @ ${role.company} (${role.location}) — ${role.period}`)
   .join("\n");
 
+const resumeAnswer = [
+  "$ cat resume.pdf",
+  `File: ${portfolio.resume.downloadName}`,
+  `View online → ${portfolio.resume.viewPath}`,
+  `Download   → ${portfolio.resume.path}`,
+].join("\n");
+
+const helpAnswer = [
+  "Available prompts:",
+  "• stack / skills / tech",
+  "• resume / cv / download resume",
+  "• projects / work / built",
+  "• experience / jobs / worked",
+  "• available / hire / contact",
+  "• whoami / about / intro",
+  "• help",
+].join("\n");
+
 const defaultAnswer = [
-  "Try asking about my stack, availability, projects, or experience.",
+  "Try asking about my stack, availability, projects, experience, or resume.",
+  "Type `help` to see all prompts.",
   `Or email me at ${portfolio.email}.`,
 ].join("\n");
 
@@ -44,6 +63,18 @@ export function getTerminalResponse(input: string): string {
   const query = normalize(input);
 
   if (!query) return defaultAnswer;
+
+  if (query === "help" || query.includes("commands") || query.includes("prompts")) {
+    return helpAnswer;
+  }
+
+  if (
+    query.includes("resume") ||
+    query.includes("curriculum") ||
+    /\bcv\b/.test(query)
+  ) {
+    return resumeAnswer;
+  }
 
   if (query.includes("stack") || query.includes("tech") || query.includes("skills")) {
     return stackAnswer;
@@ -66,7 +97,7 @@ export function getTerminalResponse(input: string): string {
   }
 
   if (query.includes("hello") || query.includes("hi")) {
-    return `Hey — I'm ${portfolio.firstName}. Ask me about my stack, projects, or availability.`;
+    return `Hey — I'm ${portfolio.firstName}. Ask me about my stack, projects, resume, or availability.`;
   }
 
   return defaultAnswer;

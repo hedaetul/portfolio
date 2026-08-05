@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { ProfilePhoto } from "@/components/profile-photo";
 import { InfoTable, TerminalPageShell } from "@/components/terminal-ui";
 import { portfolio } from "@/lib/portfolio";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About",
@@ -24,6 +25,13 @@ export default function AboutPage() {
       </p>
 
       <InfoTable rows={[...portfolio.aboutFacts]} />
+
+      <Link
+        href={portfolio.resume.viewPath}
+        className="mt-10 inline-flex items-center gap-2 rounded-md border border-white/15 px-4 py-2.5 font-mono text-sm text-foreground transition hover:border-terminal/40 hover:text-terminal"
+      >
+        $ cat resume.pdf
+      </Link>
     </TerminalPageShell>
   );
 }

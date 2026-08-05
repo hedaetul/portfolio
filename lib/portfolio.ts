@@ -28,6 +28,12 @@ export const portfolio = {
   domain: 'hedaetul.dev',
   username: 'hedaetul',
   profileImage: '/hedaetul_dp.jpg',
+  resume: {
+    path: '/Md_Hedaetul_Islam_Resume.pdf',
+    viewPath: '/resume',
+    downloadName: 'Hedaetul-Islam-Resume.pdf',
+    label: 'Resume',
+  },
   availability: 'open to roles & freelance',
   headline: 'Modern web & mobile applications.',
   focus: ['React', 'Next.js', 'TypeScript', 'Flutter'],
@@ -221,4 +227,5 @@ export const terminalSuggestions = [
   'are you available for hire?',
   'tell me about a recent project',
   'where have you worked?',
+  'download my resume',
 ] as const;

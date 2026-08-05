@@ -6,6 +6,7 @@ import { CommandHeading, PageBreadcrumb } from "@/components/terminal-ui";
 export const metadata: Metadata = {
   title: "Contact",
   description: "Get in touch for projects and opportunities.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

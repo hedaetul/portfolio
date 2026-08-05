@@ -6,6 +6,7 @@ import { CommandHeading, PageBreadcrumb } from "@/components/terminal-ui";
 export const metadata: Metadata = {
   title: "Experience",
   description: "Professional experience across UK, USA, and Bangladeshi teams.",
+  alternates: { canonical: "/experience" },
 };
 
 export default function ExperiencePage() {

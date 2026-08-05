@@ -6,6 +6,7 @@ import { CommandHeading, PageBreadcrumb } from "@/components/terminal-ui";
 export const metadata: Metadata = {
   title: "Skills",
   description: "Languages, frameworks, tools, and workflow.",
+  alternates: { canonical: "/skills" },
 };
 
 export default function SkillsPage() {

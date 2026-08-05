@@ -8,8 +8,6 @@ import {
 } from "@/lib/emails/contact-message";
 import { portfolio } from "@/lib/portfolio";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: Request) {
   const body = await request.json();
   const name = String(body.name ?? "").trim();
@@ -34,6 +32,7 @@ export async function POST(request: Request) {
 
   const emailContent = { name, email, message };
 
+  const resend = new Resend(process.env.RESEND_API_KEY);
   const { error } = await resend.emails.send({
     from,
     to,

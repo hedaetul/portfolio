@@ -1,15 +1,22 @@
 import { HeroSection } from "@/components/hero-section";
 import { CommandHeading, PageBreadcrumb, TerminalLink } from "@/components/terminal-ui";
 import { navLinks, portfolio } from "@/lib/portfolio";
+import { getSiteUrl } from "@/lib/site";
 
 export default function HomePage() {
+  const siteUrl = getSiteUrl();
+
   const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: portfolio.name,
+    givenName: portfolio.firstName,
     jobTitle: portfolio.role,
+    description: portfolio.summary,
     email: portfolio.email,
     telephone: portfolio.phone,
+    url: siteUrl,
+    image: `${siteUrl}${portfolio.profileImage}`,
     address: { "@type": "PostalAddress", addressLocality: portfolio.location },
     sameAs: [portfolio.github],
     knowsAbout: portfolio.focus,

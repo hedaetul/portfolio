@@ -7,6 +7,7 @@ import { portfolio } from "@/lib/portfolio";
 export const metadata: Metadata = {
   title: "About",
   description: portfolio.aboutBio,
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {
